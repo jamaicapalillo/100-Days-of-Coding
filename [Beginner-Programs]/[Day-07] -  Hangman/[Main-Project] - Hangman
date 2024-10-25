@@ -1,1 +1,124 @@
+# 100 DAYS OF CODE
+# CATEGORY: BEGINNER [Day-07]
+# Main Project: Hangman
+# Date: October 10, 2024
+
+# -------------------------------------------
+
+# Instruction:
+# TODO 1: Randomly choose a word from the word_list and assign it to a variable called chosen_word. Then print it.
+# TODO 2: Ask the user to guess a letter and assign their answer to variable called guess. Make guess lowercase.
+# TODO 3: Check if the letter the user guessed (guess) is one of the letters in the chosen_word. Print "Right", if it is not, print ("Wrong")
+# TODO 4: If the user has entered a letter they've already guessed, print the letter and let them know.
+# TODO 5: If the letter is not he chosen_word, print out the letter and let them know it's not in the word.
+
+# -------------------------------------------
+import random
+
+def display_hangman(incorrect_guesses):
+    stages = [
+        '''
+          _______
+         |/      |
+         |      
+         |     
+         |      
+         |     
+         |___
+        ''',
+        '''
+          _______
+         |/      |
+         |      (_)
+         |     
+         |      
+         |     
+         |___
+        ''',
+        '''
+          _______
+         |/      |
+         |      (_)
+         |      \\|
+         |      
+         |     
+         |___
+        ''',
+        '''
+          _______
+         |/      |
+         |      (_)
+         |      \\|/
+         |       |
+         |     
+         |___
+        ''',
+        '''
+          _______
+         |/      |
+         |      (_)
+         |      \\|/
+         |       |
+         |      / 
+         |___
+        ''',
+        '''
+          _______
+         |/      |
+         |      (_)
+         |      \\|/
+         |       |
+         |      / \\
+         |___
+        '''
+    ]
+    return stages[incorrect_guesses]
+
+# Randomly choose a word from the word_list and assign it to a variable called chosen_word. Then print it.
+word_list = ["butterfly", "pink", "water", "rain", "escape", "peace"]
+random.choice (word_list)
+chosen_word = random.choice (word_list)
+correct_guess = []
+incorrect_guess = 0
+
+# Create a variable called 'lives' to keep track of the number of the lives left.
+lives = 6
+
+# If guess is not a letter in the chosen_word, then reduce lives by 1.
+while lives > 0:
+
+    # Ask the user to guess a letter and assign their answer to variable called guess. Make guess lowercase.
+    guess = input ("Guess a Letter: ").lower()
+    display = ""
+
+    # Check if the letter the user guessed (guess) is one of the letters in the chosen_word. Print "Right", if it is not, print ("Wrong")
+    if guess in correct_guess:
+        print(f"You already guessed {guess}")
+
+    display = ""
+    for char in chosen_word:
+        if char == guess:
+            display += char
+            correct_guess.append(guess)
+
+        elif char in correct_guess:
+            display += char
+        else:
+            display += "_"
+
+    print (display)
+    if guess not in chosen_word:
+        lives -= 1
+        incorrect_guess += 1
+        print(display_hangman(incorrect_guess))
+        print (f"Wrong guess. You only have {lives} lives.")
+
+        # If lives, goes down to 0 then the game should end, and it should print "You lose."
+        if lives == 0:
+            print (display_hangman(incorrect_guess))
+            print("You Lose! The chosen word was: " + chosen_word)
+
+    if "_" not in display:
+        print ("You Win!")
+        break
 
