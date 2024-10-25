@@ -1,7 +1,7 @@
-# ***[Day-07] - Hangman***
+## ***[Day-07]***
 
 ## Description
-A brief description of what your program does and its purpose.
+> A brief description of what your program does and its purpose.
 
 ## Table of Contents
 - [Installation](#installation)
