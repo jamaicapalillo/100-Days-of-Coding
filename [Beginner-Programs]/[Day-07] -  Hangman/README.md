@@ -1,22 +1,12 @@
-## ***[Day-07]***
+## ***[Day-07] - Hangman Game***
 
-## Description
-> A brief description of what your program does and its purpose.
+## Concepts Used
+> for loop
+> List comprehension
+> Importing Modules
 
-## Table of Contents
-- [Installation](#installation)
-- [Usage](#usage)
-- [Folder Structure](#folder-structure)
-- [Contributing](#contributing)
-- [License](#license)
-- [Acknowledgments](#acknowledgments)
-- [Contact](#contact)
-- [Future Work](#future-work)
+## **Projects**
+[Exercises] (https://github.com/jamaicapalillo/100-Days-of-Coding/blob/main/%5BBeginner-Programs%5D/%5BDay-07%5D%20-%20%20Hangman/%5BMain-Project%5D%20-%20Hangman)  
 
-## Installation
-1. Clone the repository
-2. Install dependencies
 
-```bash
-pip install -r requirements.txt
 
