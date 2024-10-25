@@ -1,18 +1,8 @@
-# 100 DAYS OF CODE
-# CATEGORY: BEGINNER
+# Category: Beginner
+# Main Project: Password Generator
 # Date: September 26, 2024
 
-# Main Program:  PASSWORD GENERATOR
-# Programmed by: Palillo, Jamaica C.
-
-# -------------------------------------------
-
-# Instruction: (Easy Version)
-# Generate the password in sequence. Letters, then symbols , then numbers.
-
-# -------------------------------------------
-
-# Imports
+# imports
 import random
 
 # Lists
@@ -20,13 +10,33 @@ letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n',
 numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 symbols = ['!', '#', '$', '%', '&', '(', ')', '*', '+']
 
-#Greetings
+# greetings
 print("Welcome to the LockCode Wizard!")
 
-# User's input
+# user's input
 nr_letters= int(input("How many letters would you like in your password?\n")) 
 nr_symbols = int(input(f"How many symbols would you like?\n"))
 nr_numbers = int(input(f"How many numbers would you like?\n"))
+
+# [Hard Version]
+password_list = []
+
+for char in range (0, nr_letters):
+    password_list.append (random.choice (letters))
+
+for char in range (0, nr_symbols):
+    password_list.append(random.choice (symbols))
+   
+for char in range (0, nr_numbers):
+   password_list.append (random.choice (numbers))
+
+random.shuffle (password_list)
+
+password = " "
+for char in password_list:
+    password += char
+
+print (f"Your password is: {password}")
 
 # [Easy Version]
 # For Loops
@@ -42,24 +52,3 @@ nr_numbers = int(input(f"How many numbers would you like?\n"))
 #    password += random.choice (numbers)
 
 # print (password)
-
-# [Hard Version]
-password_list = []
-
-for char in range (0, nr_letters):
-    password_list.append (random.choice (letters))
-
-for char in range (0, nr_symbols):
-    password_list.append(random.choice (symbols))
-   
-for char in range (0, nr_numbers):
-   password_list.append (random.choice (numbers))
-
-
-random.shuffle (password_list)
-
-password = " "
-for char in password_list:
-    password += char
-
-print (f"Your password is: {password}")
