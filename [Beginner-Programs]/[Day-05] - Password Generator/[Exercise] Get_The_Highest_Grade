@@ -1,1 +1,10 @@
+grades = (123, 124, 45, 45, 56, 114, 24, 45, 135, 24, 354, 35, 54, 140, 142)
 
+max_score = max(grades)
+print (max_score)
+
+max = 0
+for grade in grades:
+    if max < grade:
+        max = grade
+print (max)
