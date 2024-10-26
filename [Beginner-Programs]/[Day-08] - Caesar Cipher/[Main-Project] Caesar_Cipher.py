@@ -8,21 +8,46 @@ shift = int(input("Type the shift number:\n"))
 # TODO 2: Inside the 'encrypt ()' function, shift each letter of the 'original_text' by the 'shift' amount and print the encrypted text.
 # TODO 3: Call the 'encrypt()' function and pass the 'user inputs'. You should be able to test the code and encrypt a message.
 
-def encrypt(original_text, shift):
-    encrypted_text = ""
+def caesar_cipher (text, shift, direction):
+    output_text = ""
 
-    for letter in original_text:
+    if direction == "decode":
+        shift *= -1
+    for letter in text:
         if letter in alphabets:
-            position = alphabets.index(letter)
-            new_position = (position + shift) % 26
-            encrypted_text += alphabets[new_position]
+            new_position = (alphabets.index(letter)+ shift) % 26
+            output_text += alphabets[new_position]
         else:
-            encrypted_text += letter
+            output_text += letter
+    print(f"The {direction}d text is {output_text}")
 
-    print(f"The encoded text is {encrypted_text}")
+caesar_cipher (text, shift, direction)
 
+# def encrypt (original_text, shift):
+#     encrypted_text = ""
 
-if direction == "encode":
-    encrypt(text, shift)
+#     for letter in original_text:
+#         if letter in alphabets:
+#             new_position = (alphabets.index(letter)+ shift) % 26
+#             encrypted_text += alphabets[new_position]
+#         else:
+#             encrypted_text += letter
 
-# TODO 4: What happens if you try to shift z forwards by 9? Can you fix the code?
+#     print(f"The encoded text is {encrypted_text}")
+
+# def decipher (original_text, shift):
+#     deciphered_text = ""
+
+#     for letter in original_text:
+#         if letter in alphabets:
+#             new_position = (alphabets.index(letter) - shift) % 26
+#             deciphered_text += alphabets[new_position]
+#         else:
+#             deciphered_text += letter
+
+#     print(f"The decoded text is {deciphered_text}")
+
+# if direction == "encode":
+#     encrypt (text, shift)
+# elif direction == "decode":
+#     decipher (text, shift)
