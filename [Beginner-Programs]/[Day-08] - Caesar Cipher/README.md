@@ -2,11 +2,7 @@
 > About the program: This program allows the user to encrypt or decipher a message using a simple Caesar cipher technique, where each letter is shifted by a specified number of places in the alphabet.
 
 ## Concepts Used
-<details>
- <summary> Modules and Libraries</summary>  
-- Time Module
-</details>  
-
+- Modules and Libraries    
 - Lists  
 - Functions  
 - Loops  
@@ -23,9 +19,6 @@
 ![image](https://github.com/user-attachments/assets/75eef31a-494d-42b4-a920-6a186aa0721b)
 
 ---
-<details>
- <summary>
-<h2><b> Future Enhancement </b></h2>
-  </summary>
+### Future Enhancement
 - [ ] Add font colors
-</details>
+
