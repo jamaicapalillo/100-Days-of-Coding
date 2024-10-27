@@ -3,8 +3,8 @@
 
 ## Concepts Used
 <details>
- <summary> Modules and Libraries</summary>
- - Time Module
+ <summary> Modules and Libraries</summary>  
+- Time Module
 </details>  
 
 - Lists  
@@ -25,7 +25,7 @@
 ---
 <details>
  <summary>
-<h2> Future Enhancement </h2>
+<h2><b> Future Enhancement </b></h2>
   </summary>
 - [ ] Add font colors
 </details>
