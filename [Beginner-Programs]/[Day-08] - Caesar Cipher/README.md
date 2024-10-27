@@ -5,7 +5,8 @@
 <details>
  <summary> Modules and Libraries</summary>
  - Time Module
-</details>
+</details>  
+
 - Lists  
 - Functions  
 - Loops  
