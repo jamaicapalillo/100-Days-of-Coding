@@ -1,1 +1,49 @@
+def sum (num1, num2):
+    return num1 + num2
 
+def difference (num1, num2):
+    return num1 - num2
+
+def product (num1, num2):
+    return num1 * num2
+
+def quotient (num1, num2):
+    return num1 / num2
+
+operations = {
+    "+": sum,
+    "-": difference,
+    "*": product,
+    "/": quotient,
+}
+
+new_calculation = "1"
+
+while True:
+    if new_calculation == "1":
+        print ("Welcome to the calculator!")
+        print ("Here are the opeartions you can choose: ")
+        for symbol in operations:
+            print (f"[{symbol}]", end="")
+
+        num1 = float(input("\n\nEnter the first number? "))
+    
+    operation_symbol = input ("Pick an operation: ")
+    num2 = float(input("Enter the second number? "))
+        
+    result = operations[operation_symbol](num1, num2)
+    print (f"{num1} {operation_symbol} {num2} = {result}")
+
+    print (f"\n\nCompute with {result}: \n\t [1] = Yes \n\t [2] = No \n\t [3] = Quit")
+    new_calculation = input ("\nPick a number: \n\n ")
+
+    if new_calculation == "1":
+        continue
+    elif new_calculation == "2":
+        num1 = result
+    elif new_calculation == "3":
+        print ("Thank you for using the calculator.")
+        break
+    else:
+        print ("Invalid input. Please type only 'Yes' or 'No'.")
+        break
