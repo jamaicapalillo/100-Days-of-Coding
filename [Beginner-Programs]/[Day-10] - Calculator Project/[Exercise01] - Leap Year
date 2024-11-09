@@ -1,0 +1,16 @@
+def is_leap_year(year):
+
+    if year % 4 == 0: # Leap
+        if year % 100 == 0: # Leap
+            if year % 400 == 0:
+                return True
+            else:
+                return False
+        else:
+            return False
+    else:
+        return False
+
+
+is_leap_year (2400)
+is_leap_year(1989)
