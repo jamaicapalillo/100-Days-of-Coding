@@ -1,0 +1,74 @@
+import random
+
+game_logo = """ 
+//////////////////////////////////////////////////////
+//                                                  //
+//   _____                       _____ _            //
+//  |  __ \                     |_   _| |           //
+//  | |  \/_   _  ___  ___ ___    | | | |__   ___   //
+//  | | __| | | |/ _ \/ __/ __|   | | | '_ \ / _ \  //
+//  | |_\ \ |_| |  __/\__ \__ \   | | | | | |  __/  //
+//   \____/\__,_|\___||___/___/   \_/ |_| |_|\___|  //
+//                                                  //
+//                                                  //
+//   _   _                 _                        //
+//  | \ | |               | |                       //
+//  |  \| |_   _ _ __ ___ | |__   ___ _ __          //
+//  | . ` | | | | '_ ` _ \| '_ \ / _ \ '__|         //
+//  | |\  | |_| | | | | | | |_) |  __/ |            //
+//  \_| \_/\__,_|_| |_| |_|_.__/ \___|_|            //
+//                                                  //
+//////////////////////////////////////////////////////                                                                                                                                                                                    
+                                                                                                                                                                                                            """
+EASY_LEVEL_ATTEMPTS = 10
+HARD_LEVEL_ATTEMPTS = 5
+
+def guess_number (number, guess):
+    if guess == number:
+        print (f"Congratulations! You have guessed the number {number} correctly!")
+        return True
+    elif guess < number:
+        print ("Too low.")
+        return False
+    else:
+        print ("Too high.")
+        return False
+    
+def set_difficulty():
+    difficulty = input ("Choose a difficulty. Type 'easy' or 'hard': ").lower()
+    if difficulty == 'easy':
+        return EASY_LEVEL_ATTEMPTS
+    else:
+        return HARD_LEVEL_ATTEMPTS
+
+def play_game():
+    print (game_logo)
+    print ("Welcome to the Number Guessing Game")
+    print ("Instruction: Guess a number between 1 and 100.")
+
+    number = random.randint(1, 100)
+    is_game_over = False
+
+    turns = set_difficulty()
+
+    while not is_game_over:
+        if turns != 0:
+            print (f"You have {turns} attempts remaining to guess the number.")
+            user_guess = int(input ("Make a guess: "))
+            is_game_over = guess_number (number, user_guess)
+            
+            if not is_game_over:
+                turns -= 1
+                if turns > 0:
+                    print ("Guess again.")
+
+        else:
+            print (f"Game Over. The number was {number}")
+            is_game_over = True
+
+while True:
+    play_game()
+    again = input ("Do you want to play again? Type 'y' or 'n': ").lower()
+    if again != "y":
+        print ("Thanks for playing! Goodbye.")
+        break
